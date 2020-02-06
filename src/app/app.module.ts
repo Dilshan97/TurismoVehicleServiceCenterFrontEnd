@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeeComponent } from './View/employee/employee.component';
@@ -70,7 +72,8 @@ import { VehiclehictoryComponent } from './View/vehiclehictory/vehiclehictory.co
 
   ],
   providers: [
-    DatePipe
+    DatePipe,
+    {provide: LocationStrategy, useClass:HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })
